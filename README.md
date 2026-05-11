@@ -6,19 +6,19 @@ Plataforma web completa desenvolvida em PHP para o gerenciamento de serviços au
 
 ### 1. Painel de Controle (Dashboard Geral)
 Visão consolidada de todos os clientes, mostrando meses faturados, status de pagamento (PAGO ou devedor) e filtros dinâmicos de data sem necessidade de reload da página (AJAX).
-![Painel Geral - Listar](cole-a-imagem-1.png-aqui)
+![Painel Geral - Listar](1.png)
 
 ### 2. Visão Detalhada do Cliente
 Painel individual que cruza os dados do que o cliente consumiu no mês com o que ele já pagou, gerando o saldo devedor exato por período e o saldo geral histórico.
-![Detalhes do Cliente](cole-a-imagem-3.png-aqui)
+![Detalhes do Cliente](3.png)
 
 ### 3. Tela de Pagamento (Dar Baixa)
 Formulário dinâmico que permite selecionar múltiplas faturas em aberto. O sistema soma os valores em tempo real via JavaScript e registra a baixa no banco de dados, vinculando o pagamento ao histórico.
-![Tela de Pagamento](cole-a-imagem-2.png-aqui)
+![Tela de Pagamento](2.png)
 
 ### 4. Relatório Final de Serviços
 Geração de relatório detalhado (layout para impressão/PDF) listando todos os serviços consumidos (Vistoria, Placas, Renave, Honorários) no período filtrado para envio ao cliente.
-![Relatório PDF](cole-a-imagem-impressao-pdf.png-aqui)
+![Relatório PDF](impressao_pdf.png)
 
 ---
 
