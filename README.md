@@ -1,19 +1,33 @@
 # Sistema de Gestão e Faturamento Automotivo
 
-Plataforma web completa desenvolvida para o gerenciamento de serviços automotivos, controle financeiro de clientes e integração de dados de despachante/lojas.
+Plataforma web completa desenvolvida em PHP para o gerenciamento de serviços automotivos, controle financeiro de clientes e integração de dados. O sistema resolve problemas complexos de contabilidade de clientes, calculando saldos devedores históricos e abatendo pagamentos de forma assíncrona.
 
-## 💻 Telas do Sistema
+## 💻 Fluxo do Sistema e Telas
 
-*(Arraste e solte o print da tela da tabela de faturamentos aqui)*
-*(Arraste e solte o print da tela de pagamento/dar baixa aqui)*
+### 1. Painel de Controle (Dashboard Geral)
+Visão consolidada de todos os clientes, mostrando meses faturados, status de pagamento (PAGO ou devedor) e filtros dinâmicos de data sem necessidade de reload da página (AJAX).
+![Painel Geral - Listar](cole-a-imagem-1.png-aqui)
+
+### 2. Visão Detalhada do Cliente
+Painel individual que cruza os dados do que o cliente consumiu no mês com o que ele já pagou, gerando o saldo devedor exato por período e o saldo geral histórico.
+![Detalhes do Cliente](cole-a-imagem-3.png-aqui)
+
+### 3. Tela de Pagamento (Dar Baixa)
+Formulário dinâmico que permite selecionar múltiplas faturas em aberto. O sistema soma os valores em tempo real via JavaScript e registra a baixa no banco de dados, vinculando o pagamento ao histórico.
+![Tela de Pagamento](cole-a-imagem-2.png-aqui)
+
+### 4. Relatório Final de Serviços
+Geração de relatório detalhado (layout para impressão/PDF) listando todos os serviços consumidos (Vistoria, Placas, Renave, Honorários) no período filtrado para envio ao cliente.
+![Relatório PDF](cole-a-imagem-impressao-pdf.png-aqui)
+
+---
 
 ## 🛠️ Tecnologias e Ferramentas
 * **Back-end:** PHP estruturado utilizando PDO para maior segurança nas consultas.
 * **Banco de Dados:** MySQL/MariaDB com modelagem relacional (tabelas de clientes, pedidos, faturamentos e pagamentos).
 * **Front-end:** HTML5, CSS3 (Bootstrap) e JavaScript (jQuery/DataTables).
-* **Comunicação Assíncrona:** Uso intenso de AJAX para recarregar tabelas e processar filtros de datas em tempo real, sem recarregar a página.
+* **Comunicação Assíncrona:** Uso intenso de AJAX para atualizar lógicas de fechamento em tempo real.
 
-## ⚙️ Principais Desafios e Soluções
-* **Motor de Faturamento Complexo:** Desenvolvimento de lógica em PHP para cruzar dados de pedidos realizados versus pagamentos efetuados, calculando saldo devedor histórico e dívidas mensais com precisão.
-* **Tabelas Dinâmicas:** Criação de relatórios de fechamento em que as colunas de meses se adaptam dinamicamente baseadas no status de pagamento do cliente.
-* **Gestão de Serviços:** Catalogação de taxas variadas (Vistoria, Placas, ATPV, Renave, Honorários) consolidadas em relatórios de impressão para cobrança.
+## ⚙️ Principais Desafios Resolvidos
+* **Motor de Faturamento Complexo:** Desenvolvimento de lógica matemática no back-end para abater dívidas antigas e cruzar pagamentos parciais, evitando cobranças duplicadas.
+* **Tabelas Dinâmicas de Inteligência:** Criação de colunas dinâmicas em PHP que se ocultam automaticamente caso todos os clientes do mês estejam com o saldo quitado.
